@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.covidhelp.model.ForCovidHelp;
 import com.covidhelp.model.NeedCovidHelp;
 import com.covidhelp.model.NeedCovidHelpDto;
 
@@ -79,6 +80,15 @@ public class UserController {
 		
 	
 		return new ResponseEntity<List<NeedCovidHelp>>(listhelp, new HttpHeaders(), HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "getalloffer", method = RequestMethod.GET, produces = "application/json")
+	public ResponseEntity<List<ForCovidHelp>> getallOffer() {
+		
+		List<ForCovidHelp> listOffer = userService.getAllOffer();
+		
+	
+		return new ResponseEntity<List<ForCovidHelp>>(listOffer, new HttpHeaders(), HttpStatus.OK);
 	}
 	
 	

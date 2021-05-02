@@ -106,6 +106,11 @@ public class UserService {
 		
 		return needCovidHelpRepository.findAll();
 	}
+	
+	public List<ForCovidHelp> getAllOffer(){
+		
+		return forCovidHelpRepository.findAll();
+	}
 
 
 }
