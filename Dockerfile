@@ -4,7 +4,6 @@ COPY src /home/app/src
 COPY pom.xml /home/app
 
 # Build a release artifact.
-RUN mvn -f /home/app/pom.xml clean package
 
 FROM openjdk:11-jre-slim
 COPY --from=build /home/app/target/covid-help-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
