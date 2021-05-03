@@ -6,5 +6,5 @@ COPY pom.xml .
 COPY src ./src
 
 # Build a release artifact.
-RUN mvn clean spring-boot:run
+RUN mvn -f /home/app/pom.xml clean package
 
